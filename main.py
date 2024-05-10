@@ -15,8 +15,6 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import Message, User as TGUser
 from aiogram.dispatcher.storage import FSMContext
 from typing import Union
-from peewee import Model, CharField, SqliteDatabase, DoesNotExist, IntegerField
-from aiogram.dispatcher.middlewares import BaseMiddleware
 import keyboards as kb
 from aiogram.dispatcher.filters import BoundFilter
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
