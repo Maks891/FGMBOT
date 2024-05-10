@@ -1133,7 +1133,7 @@ async def balance(message):
           	status = (status[0])
           	if status == '6':
           		statuss = '🧛‍♂️ Разработчик'
-          	if status == 'Admin':
+          	if status == '7':
           	     statuss = '👨‍🦰 Aдминистратор' 
           	if status == '5':
           		statuss = '💤 Игрок'
