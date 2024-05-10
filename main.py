@@ -640,6 +640,22 @@ async def stats(message):
      await bot.send_message(message.chat.id, f"📊 Кол-во пользователей бота: {len(records)}.\n📊 Кол-во бота в беседах: 0.\n📊 Кол-во активных пользователей: {len(records)}.", parse_mode='html')
 
 
+    if message.text.lower() == 'выдатьраба' :
+            user_name = message.from_user.get_mention(as_html=True)
+            msg = message
+            reply_user_name = message.reply_to_message.from_user.get_mention(as_html=True)
+            win = ['🙂', '😋', '😄', '🤑', '😃']
+            rwin = random.choice(win)
+            reply_user_id = msg.reply_to_message.from_user.id
+            user_id = msg.from_user.id
+            user_status = cursor.execute("SELECT user_status from users where user_id = ?",
+                                         (message.from_user.id,)).fetchone()
+            if user_status[0] == 'Player':
+                await bot.send_message(message.chat.id, f'Вы успешно выдали рабство игроку {reply_user_name} {rwin}', parse_mode='html')
+                cursor.execute(f'UPDATE users SET user_status = "Rab"  WHERE user_id = "{reply_user_id}"')
+                connect.commit()
+            else:
+                await bot.send_message(message.chat.id, f'{user_name}, Доступ к данной команде ограничен. Для покупки администратора обратитесь к создателю 👨‍🦰', parse_mode='html')
 
 
 
@@ -2213,19 +2229,19 @@ async def profile(message: types.Message):
           	energy = int(energy[0])
           	energy2 = '{:,}'.format(energy).replace(',', '.')
           	dcoin2 = '{:,}'.format(dcoin).replace(',', '.')
-          	if status == '6':
+          	if status == 'Rab':
           		statuss = 'Разработчик'
-          	if status == '5':
+          	if status == 'Admin':
           	     statuss = 'Aдминистратор' 
-          	if status == '1':
+          	if status == 'Player':
           		statuss = 'Игрок'
-          	if status == "3":
+          	if status == "Vip":
           		statuss = "Вип"
-          	if status == "4":
+          	if status == "Legend":
           		statuss = "Легенда"
-          	if status == "7":
+          	if status == "Vlast":
           		statuss = "Властелин"
-          	if status == "2":
+          	if status == "sponsor":
           		statuss = "Спонсор"
 
           	omg2 = f'{work2}\n{zp}'
@@ -15894,7 +15910,7 @@ async def prof_user(message: types.Message):
         	  have = '0'
         	  have2 = "0"
         	  user_name = "Игрок"
-        	  status = "1"
+        	  status = "Player"
         	  pet_name = "Безымянный"
         	  user_donate = "Обычный"
         	  Biz = '---'
