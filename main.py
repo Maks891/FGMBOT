@@ -644,6 +644,7 @@ async def stats(message):
 async def process_command_1(message: types.Message):
         user_name = cursor.execute("SELECT user_name from users where user_id = ?",(message.from_user.id,)).fetchone()
         user_name = str(user_name[0])
+        msg = message
         reply_user_name = message.reply_to_message.from_user.get_mention(as_html=True)
         win = ['🙂', '😋', '😄', '🤑', '😃']
         rwin = random.choice(win)
