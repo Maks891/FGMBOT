@@ -1131,19 +1131,19 @@ async def balance(message):
           	bitcoin2 = '{:,}'.format(bitcoin).replace(',', '.')
           	status = cursor.execute("SELECT status from users where user_id = ?",(message.from_user.id,)).fetchone()
           	status = (status[0])
-          	if status == 'Rab':
+          	if status == '6':
           		statuss = '🧛‍♂️ Разработчик'
           	if status == 'Admin':
           	     statuss = '👨‍🦰 Aдминистратор' 
-          	if status == 'Player':
+          	if status == '5':
           		statuss = '💤 Игрок'
-          	if status == "Vip":
+          	if status == "1":
           		statuss = "⚡Вип"
-          	if status == "Legend":
+          	if status == "3":
           		statuss = "Легенда⚔"
-          	if status == "Vlast":
+          	if status == "4":
           		statuss = "Властелин🖤"
-          	if status == "Sponsor":
+          	if status == "2":
           		statuss = "Спонсор🏵"
           	skin2 = cursor.execute("SELECT skin from property where user_id = ?",(message.from_user.id,)).fetchone()
           	skin2 = int(skin2[0])
@@ -2213,19 +2213,19 @@ async def profile(message: types.Message):
           	energy = int(energy[0])
           	energy2 = '{:,}'.format(energy).replace(',', '.')
           	dcoin2 = '{:,}'.format(dcoin).replace(',', '.')
-          	if status == 'Rab':
+          	if status == '6':
           		statuss = 'Разработчик'
-          	if status == 'Admin':
+          	if status == '5':
           	     statuss = 'Aдминистратор' 
-          	if status == 'Player':
+          	if status == '1':
           		statuss = 'Игрок'
-          	if status == "Vip":
+          	if status == "3":
           		statuss = "Вип"
-          	if status == "Legend":
+          	if status == "4":
           		statuss = "Легенда"
-          	if status == "Vlast":
+          	if status == "7":
           		statuss = "Властелин"
-          	if status == "Sponsor":
+          	if status == "2":
           		statuss = "Спонсор"
 
           	omg2 = f'{work2}\n{zp}'
@@ -15719,7 +15719,7 @@ async def startswith(message):
           	if perevod <= 0:
           	   await message.reply( f'<a href="tg://user?id={reply}">{user_name}</a>, нельзя перевести отрицательное число! {rloser}', parse_mode='html')  
 ######чтото
-@dp.message_handler(text=["Промо #diorelita", "промо #diorelita"])
+@dp.message_handler(text=["Промо #diorelita", "промо #start"])
 async def teht(message):
           	user_name = cursor.execute("SELECT user_name from users where user_id = ?", (message.from_user.id,)).fetchone()
           	user_name = str(user_name[0])
@@ -15894,7 +15894,7 @@ async def prof_user(message: types.Message):
         	  have = '0'
         	  have2 = "0"
         	  user_name = "Игрок"
-        	  status = "Player"
+        	  status = "1"
         	  pet_name = "Безымянный"
         	  user_donate = "Обычный"
         	  Biz = '---'
