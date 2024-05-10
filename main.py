@@ -20,10 +20,6 @@ from aiogram.dispatcher.filters import BoundFilter
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import threading
 from threading import Thread
-from pycoingecko import CoinGeckoAPI
-
-
-api = CoinGeckoAPI()
 
 
 
