@@ -655,7 +655,7 @@ async def process_command_1(message: types.Message):
                 await bot.send_message(message.chat.id, f'Вы успешно выдали рабство игроку {reply_user_name} {rwin}', parse_mode='html')
                 cursor.execute(f'UPDATE users SET user_status = "Rab"  WHERE user_id = "{reply_user_id}"')
                 connect.commit()
-            else:
+        else:
                 await bot.send_message(message.chat.id, f'{user_name}, Доступ к данной команде ограничен. Для покупки администратора обратитесь к создателю 👨‍🦰', parse_mode='html')
 
 
