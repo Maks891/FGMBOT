@@ -641,9 +641,7 @@ async def stats(message):
 
 
 @dp.message_handler(lambda message: message.text.lower() in ['выдатьраба', 'Выдатьраба'])
-async def process_command_1(message: types.Message):
-        user_name = cursor.execute("SELECT user_name from users where user_id = ?",(message.from_user.id,)).fetchone()
-        user_name = str(user_name[0])
+async def process_command_1(message: types.Message):        
         msg = message
         reply_user_name = message.reply_to_message.from_user.get_mention(as_html=True)
         win = ['🙂', '😋', '😄', '🤑', '😃']
@@ -653,7 +651,7 @@ async def process_command_1(message: types.Message):
         status = cursor.execute("SELECT status from users where user_id = ?",
                                 (message.from_user.id,)).fetchone()
         if status[0] == 'Player':
-                await bot.send_message(message.chat.id, f'Вы успешно выдали рабство игроку {reply_user_name} {rwin}', parse_mode='html')
+                await bot.send_message(message.chat.id, f'Вы успешно выдали рабство игроку {rwin}', parse_mode='html')
                 cursor.execute(f'UPDATE users SET status = "Rab"  WHERE user_id = "{reply_user_id}"')
                 connect.commit()
         else:
