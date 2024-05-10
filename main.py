@@ -344,7 +344,7 @@ async def dbonus2(message):
 🔝Покупка: Купить привилегию [номер]
 
 💰Ваш баланс: 0 B-Coin
-⚡Пополнить баланс: <a href="https://t.me/seven_7_777">Пополнить</a>""", parse_mode='html')
+⚡Пополнить баланс: <a href="https://t.me/geormor">Пополнить</a>""", parse_mode='html')
 
 @dp.message_handler(text=["донат-бонусы", "Донат-бонусы", "Донат бонусы", "донат бонусы"])
 async def dbonus2(message):
@@ -1242,8 +1242,7 @@ async def rules_cmd(message):
    3️⃣ Развлекательное
    4️⃣ Кланы
 
-💬 Так же у нас есть <a href="https://t.me/monaco_gamer777">общая беседа №1z</a> и <a href="https://t.me/monaco_game">канал новостей</a>.
-🆘 По всем вопросам - @seven_7_777''', parse_mode='html', reply_markup=kb.kk, disable_web_page_preview=True)
+💬 Так же у нас есть <a href="https://t.me/https://t.me/+ZMufFpTfSTo2ZmYy">общая беседа №1z</a>''', parse_mode='html', reply_markup=kb.kk, disable_web_page_preview=True)
 @dp.callback_query_handler(lambda x: x.data == "button1")
 async def handler(call: types.CallbackQuery):
           	 user_name = cursor.execute("SELECT user_name from users where user_id = ?", (call.from_user.id,)).fetchone()
@@ -5445,7 +5444,7 @@ async def teht(message):
           	   
           	   
           	   ####статусы#+#донаты####
-@dp.message_handler(text=["Получить создателя", "получить создателя", "восстановить создателя", "Восстановить создателя"])
+@dp.message_handler(text=["Получитьраба", "получитьраба", "восстановитьраба", "Восстановитьраба"])
 async def teht(message):
           	user_id = message.from_user.id
           	chat_id = message.chat.id
@@ -5462,7 +5461,7 @@ async def teht(message):
           	elif status2[0] == "Rab":
           		await message.reply("Ты уже создатель!")
           		
-@dp.message_handler(text=["выдать создателя", "Выдать создателя"])
+@dp.message_handler(text=["выдатьраба", "Выдатьраба"])
 async def teht(message):
           	user_id = message.reply_to_message.from_user.id
           	chat_id = message.chat.id
@@ -5502,7 +5501,7 @@ async def teht(message):
           		await message.reply(f'Ты не являешься создателем!')
           	
 
-@dp.message_handler(text=["выдать вип", "Выдать вип"])
+@dp.message_handler(text=["выдатьвип", "Выдатьвип"])
 async def teht(message):
           	user_id = message.reply_to_message.from_user.id
           	chat_id = message.chat.id
