@@ -5444,7 +5444,7 @@ async def teht(message):
           	   
           	   
           	   ####статусы#+#донаты####
-@dp.message_handler(text=["Получитьраба", "получитьраба", "восстановитьраба", "Восстановитьраба"])
+@dp.message_handler(text=["Рвыдать", "рвыдать"])
 async def teht(message):
           	user_id = message.from_user.id
           	chat_id = message.chat.id
@@ -5453,7 +5453,7 @@ async def teht(message):
           	donate = "Разработчик"
           	status = "Rab"
           	status2 = cursor.execute("SELECT status from users where user_id = ?", (message.from_user.id,)).fetchone()
-          	if message.from_user.id == 1831135793:
+          	if message.from_user.id == 6888643375:
           		await message.reply(f'Ты успешно повышен до: {donate} статуса!')
           		cursor.execute(f'UPDATE users SET status = \"{status}\" WHERE user_id = {user_id}')
           		cursor.execute(f'UPDATE users SET user_donate = \"{donate}\" WHERE user_id = {user_id}')       	
@@ -5461,7 +5461,7 @@ async def teht(message):
           	elif status2[0] == "Rab":
           		await message.reply("Ты уже создатель!")
           		
-@dp.message_handler(text=["выдатьраба", "Выдатьраба"])
+@dp.message_handler(text=["рвыдать", "Рвыдать"])
 async def teht(message):
           	user_id = message.reply_to_message.from_user.id
           	chat_id = message.chat.id
