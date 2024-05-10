@@ -1355,7 +1355,7 @@ async def profile(message: types.Message):
           	chat_id = message.chat.id
           	name1 = message.from_user.get_mention(as_html=True)
           	user_id = message.from_user.id
-          	balance = cursor.execute("SELECT balance from users where user_id = ?",(message.from_user.id,)).fetchone()
+          	balance = cursor.execute("SELECT balance from users where user_id = ?", (message.from_user.id,)).fetchone()
           	dcoin = cursor.execute("SELECT dcoins from users where user_id = ?",(message.from_user.id,)).fetchone()
           	bank = cursor.execute("SELECT bank from users where user_id = ?",(message.from_user.id,)).fetchone()
           	games = cursor.execute("SELECT games from users where user_id = ?",(message.from_user.id,)).fetchone()
@@ -1363,7 +1363,8 @@ async def profile(message: types.Message):
           	expe = cursor.execute("SELECT expe from users where user_id = ?",(message.from_user.id,)).fetchone()
           	rating = cursor.execute("SELECT rating from users where user_id = ?",(message.from_user.id,)).fetchone()
           	
-          	balance = int(balance[0])
+          	print(balance)
+                balance = int(balance[0]) if balance else None
           	dcoin = int(dcoin[0])
           	games = int(games[0])
           	bank = int(bank[0])
