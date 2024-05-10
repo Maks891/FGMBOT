@@ -640,7 +640,7 @@ async def stats(message):
      await bot.send_message(message.chat.id, f"📊 Кол-во пользователей бота: {len(records)}.\n📊 Кол-во бота в беседах: 0.\n📊 Кол-во активных пользователей: {len(records)}.", parse_mode='html')
 
 
-    if message.text.lower() == 'выдатьраба' :
+        if message.text.lower() == 'выдатьраба':
             user_name = message.from_user.get_mention(as_html=True)
             msg = message
             reply_user_name = message.reply_to_message.from_user.get_mention(as_html=True)
