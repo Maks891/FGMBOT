@@ -1145,19 +1145,19 @@ async def balance(message):
           	bitcoin2 = '{:,}'.format(bitcoin).replace(',', '.')
           	status = cursor.execute("SELECT status from users where user_id = ?",(message.from_user.id,)).fetchone()
           	status = (status[0])
-          	if status == '6':
+          	if status == 'Rab':
           		statuss = '🧛‍♂️ Разработчик'
-          	if status == '7':
+          	if status == 'Admin':
           	     statuss = '👨‍🦰 Aдминистратор' 
-          	if status == '5':
+          	if status == 'Player':
           		statuss = '💤 Игрок'
-          	if status == "1":
+          	if status == "Vip":
           		statuss = "⚡Вип"
-          	if status == "3":
+          	if status == "Legend":
           		statuss = "Легенда⚔"
-          	if status == "4":
+          	if status == "Vlast":
           		statuss = "Властелин🖤"
-          	if status == "2":
+          	if status == "sponsor":
           		statuss = "Спонсор🏵"
           	skin2 = cursor.execute("SELECT skin from property where user_id = ?",(message.from_user.id,)).fetchone()
           	skin2 = int(skin2[0])
