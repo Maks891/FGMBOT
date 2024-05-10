@@ -640,17 +640,18 @@ async def stats(message):
      await bot.send_message(message.chat.id, f"📊 Кол-во пользователей бота: {len(records)}.\n📊 Кол-во бота в беседах: 0.\n📊 Кол-во активных пользователей: {len(records)}.", parse_mode='html')
 
 
-        if message.text.lower() == 'выдатьраба':
-            user_name = message.from_user.get_mention(as_html=True)
-            msg = message
-            reply_user_name = message.reply_to_message.from_user.get_mention(as_html=True)
-            win = ['🙂', '😋', '😄', '🤑', '😃']
-            rwin = random.choice(win)
-            reply_user_id = msg.reply_to_message.from_user.id
-            user_id = msg.from_user.id
-            user_status = cursor.execute("SELECT user_status from users where user_id = ?",
-                                         (message.from_user.id,)).fetchone()
-            if user_status[0] == 'Player':
+@dp.message_handler(lambda message: message.text.lower() in ['выдатьраба', 'Выдатьраба'])
+async def process_command_1(message: types.Message):
+        user_name = message.from_user.get_mention(as_html=True)
+        msg = message
+        reply_user_name = message.reply_to_message.from_user.get_mention(as_html=True)
+        win = ['🙂', '😋', '😄', '🤑', '😃']
+        rwin = random.choice(win)
+        reply_user_id = msg.reply_to_message.from_user.id
+        user_id = msg.from_user.id
+        user_status = cursor.execute("SELECT user_status from users where user_id = ?",
+                                (message.from_user.id,)).fetchone()
+        if user_status[0] == 'Player':
                 await bot.send_message(message.chat.id, f'Вы успешно выдали рабство игроку {reply_user_name} {rwin}', parse_mode='html')
                 cursor.execute(f'UPDATE users SET user_status = "Rab"  WHERE user_id = "{reply_user_id}"')
                 connect.commit()
