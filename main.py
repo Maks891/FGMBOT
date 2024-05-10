@@ -642,18 +642,18 @@ async def stats(message):
 
 @dp.message_handler(lambda message: message.text.lower() in ['выдатьраба', 'Выдатьраба'])
 async def process_command_1(message: types.Message):
-        user_name = message.from_user.get_mention(as_html=True)
-        msg = message
+        user_name = cursor.execute("SELECT user_name from users where user_id = ?",(message.from_user.id,)).fetchone()
+        user_name = str(user_name[0])
         reply_user_name = message.reply_to_message.from_user.get_mention(as_html=True)
         win = ['🙂', '😋', '😄', '🤑', '😃']
         rwin = random.choice(win)
         reply_user_id = msg.reply_to_message.from_user.id
         user_id = msg.from_user.id
-        user_status = cursor.execute("SELECT user_status from users where user_id = ?",
+        status = cursor.execute("SELECT status from users where user_id = ?",
                                 (message.from_user.id,)).fetchone()
-        if user_status[0] == 'Player':
+        if status[0] == 'Player':
                 await bot.send_message(message.chat.id, f'Вы успешно выдали рабство игроку {reply_user_name} {rwin}', parse_mode='html')
-                cursor.execute(f'UPDATE users SET user_status = "Rab"  WHERE user_id = "{reply_user_id}"')
+                cursor.execute(f'UPDATE users SET status = "Rab"  WHERE user_id = "{reply_user_id}"')
                 connect.commit()
         else:
                 await bot.send_message(message.chat.id, f'{user_name}, Доступ к данной команде ограничен. Для покупки администратора обратитесь к создателю 👨‍🦰', parse_mode='html')
