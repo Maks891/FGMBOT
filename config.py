@@ -1,8 +1,8 @@
-API_BOT = '2092141809:AAFv-K1GIkWzpLnZSfmmsircIhWbt91hyXI'
-ADMINS = [1526525522, 403607590]
+API_BOT = '6542734064:AAGYEBv8My1nSOiJK3CY85J3U3qjP3gDIag'
+ADMINS = [6888643375, 403607590]
 
-TELEGRAM_CHANNEL = "https://t.me/garant4ek"
-MENEDGER = "https://t.me/garant4ek"
+TELEGRAM_CHANNEL = "https://t.me/geormor"
+MENEDGER = "https://t.me/geormor"
 
 # ПРАЦЮЄ ВЖЕ РІВНО 2 години 20 хвилин
 # ПРАЦЮЄ ВЖЕ РІВНО 2 години 14 хвилин
