@@ -1,3 +1,0 @@
-#@Im_hegy
-
-token2 = "6542734064:AAGYEBv8My1nSOiJK3CY85J3U3qjP3gDIag "
