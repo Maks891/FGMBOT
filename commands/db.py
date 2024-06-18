@@ -86,7 +86,7 @@ async def reg_user(user_id):
         cursor.execute('INSERT INTO users (user_id, name, balance, btc, bank, depozit, timedepozit, exp, energy, case1,'
                        'case2, case3, case4, rating, games, ecoins, per, dregister, corn, status, yen, perlimit)'
                        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                       (user_id, 'Игрок', 10000, 200, 0, 0, dt, 5000000, 10, 0, 0, 0, 0, 0, 0, 0, 0, dt, 0, 0, 0, 0))
+                       (user_id, 'Игрок', 10000, 200, 0, 0, dt, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, dt, 0, 0, 0, 0))
 
         cursor.execute('INSERT INTO mine (user_id, iron, gold, diamond, amestit, aquamarine, emeralds, matter, plasma, '
                        'nickel, titanium, cobalt, ectoplasm, biores, palladium)'
