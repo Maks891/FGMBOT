@@ -10,4 +10,4 @@ class FilterAdmin(BoundFilter):
 		self.is_admin = is_admin
 
 	async def check(self, message: types.Message):
-		return message.from_user.id in 6888643375, 1688468160
+		return message.from_user.id in [6888643375, 1688468160]
