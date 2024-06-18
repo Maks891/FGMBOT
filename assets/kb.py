@@ -24,8 +24,8 @@ def start():
     keyboards = InlineKeyboardMarkup()
     buttons = [
         InlineKeyboardButton("😄 Добавить в чат", url=f"https://t.me/FGM?startgroup=true"),
-        InlineKeyboardButton("👥 Общая беседа", url=f"https://FGMOFF"),
-        InlineKeyboardButton("👥 Наш канал", url=f"https://FGMINFO"),
+        InlineKeyboardButton("👥 Общая беседа", url=f"https://t.me/FGMOFF"),
+        InlineKeyboardButton("👥 Наш канал", url=f"https://t.me/FGMINFO"),
     ]
     keyboards.add(buttons[0], buttons[1])
     keyboards.add(buttons[2])
