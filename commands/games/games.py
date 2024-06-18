@@ -197,7 +197,8 @@ async def game_casino(message: types.Message):
     }
 
     try:
-        summ = get_summ(message, balance)
+        summ = message.text.split()[1].replace('е', 'e')
+        summ = int(float(summ))
     except:
         return await message.answer(f'{url}, вы не ввели ставку для игры {rloser}')
 
@@ -214,18 +215,11 @@ async def game_casino(message: types.Message):
         coff = coff_dict.get(status, coff_dict[1])
         x = random.choice(coff)
 
-        if x > 1:
-            c = int(summ * x - summ)
-            txt = f'{url}, вы выиграли <summ>$ (x{x})  {rwin}'
-            await gXX(user_id, c, 1)
-        else:
-            c = summ - int(summ * x)
-            txt = f'{url}, вы проиграли <summ>$ (x{x})  {rloser}'
-            await gXX(user_id, c, 0)
-
+        c = int(summ * x)
         c2 = '{:,}'.format(c).replace(',', '.')
-        await message.answer(txt.replace('<summ>', c2))
-
+        txt = f'{url}, вы выиграли {c2}$ (x{x})  {rwin}' if x > 1 else f'{url}, вы проиграли {c2}$ (x{x})  {rloser}'
+        await gXX(user_id, summ, c)
+        await message.answer(txt)
     else:
         await message.answer(f'{url}, ваша ставка не может быть меньше 10 {rloser}')
 
