@@ -47,6 +47,10 @@ async def energy_cmd_s(message: types.Message):
 async def bank_cmd_s(message: types.Message):
     await bank_cmd(message)
 
+@dp.message_handler(lambda message: message.text in ['Узнать ид', 'узнать ид', 'Узнать ID', 'узнать ID', 'узнать id', 'Узнать id'])
+async def yznat_cmd_s(message: types.Message):
+    await yznat_cmd(message)
+
 
 @dp.message_handler(lambda message: message.text in ['мой лимит', 'Мой лимит'])
 async def limit_cmd_s(message: types.Message):
