@@ -4,7 +4,7 @@ from aiogram import types, Dispatcher
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import StatesGroup, State
 from commands.db import url_name, getstatus, get_name
-from commands.admin.admin_db import *
+from commands.admin.db import *
 from commands.main import geturl
 from commands.main import win_luser
 import config as cfg
