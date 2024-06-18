@@ -276,7 +276,7 @@ async def game_spin(message: types.Message):
         await message.answer(f'{url}, ваша ставка не может быть меньше 10 {rloser}')
 
 
-async def game_trade(message):
+async def game_trade(message: types.Message):
     user_id = message.from_user.id
     rwin, rloser = await win_luser()
     url = await url_name(user_id)
@@ -284,8 +284,7 @@ async def game_trade(message):
 
     try:
         action = message.text.split()[1]
-        summ = message.text.split()[2].replace('е', 'e')
-        summ = int(float(summ))
+        summ = get_summ(message, balance)
     except:
         return await message.answer(f'{url}, вы не ввели ставку для игры {rloser}')
 
@@ -313,7 +312,7 @@ async def game_trade(message):
             payout = int(summ + (summ * random_number / 100))
             c2 = '{:,}'.format(payout).replace(',', '.')
             await message.answer(f'{url}\n📈 Курс пошёл {result} на {random_number}%\n✅ Ваш выигрыш составил - {c2}$')
-            await gXX(user_id, 0, payout)
+            await gXX(user_id, payout, 1)
         else:
             payout = int(summ - (summ * random_number / 100))
             await message.answer(f'{url}\n📈 Курс пошёл {result} на {random_number}%\n❌ Ваш выигрыш составил - 0$')
