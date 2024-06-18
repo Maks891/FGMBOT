@@ -166,7 +166,7 @@ async def exchange_value(message: types.Message):
         await message.answer(f'На твоём счету {ecoins} B-Coins, чтобы пополнить введите - Донат {rloser}')
         return
 
-    summ = u * 200000000000 # сумма денег за 1 B-Coin
+    summ = u * 2500000000000 # сумма денег за 1 B-Coin
     summ2 = '{:,}'.format(summ).replace(',', '.')
 
     await exchange_value_db(user_id, summ, u)
