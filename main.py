@@ -204,6 +204,7 @@ if __name__ == '__main__':
     commands.entertaining.earnings.tree.main.reg(dp)
     commands.basic.ore.main.reg(dp)
     commands.help.reg(dp)
+    commands.punishment.reg(dp)
     commands.entertaining.rz.reg(dp)
     commands.basic.top.reg(dp)
     commands.entertaining.wedlock.reg(dp)
