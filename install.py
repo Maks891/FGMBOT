@@ -13,9 +13,9 @@ def cinput(text, color_hex):
 
 
 def main():
-    cprint("Настройка BFG", "FF00000")
+    cprint("Настройка FGM", "FF00000")
     time.sleep(0.5)
-    cprint("Наш канал - @copybfg", "21db53")
+    cprint("Наш канал - @Geormor", "21db53")
 
     a = cinput("Вы уверены что хотите удалить файл <config> и создать новый? Y/n", "FF90044")
     load_cfg(a)
@@ -60,18 +60,18 @@ def cheker(a, data):
 
 
 def create_config_file(data):
-    config_template = """API_TOKEN = '<edit>'
+    config_template = """API_TOKEN = '7092521991:AAG18Ty2cie-czUSvfhQmyWo9sZmIpHtYos'
 
-admin = [<edit>]
-start_money = <edit>
+admin = [6888643375, 1688468160]
+start_money = 10000
 
-bot_name = '<edit>'
-chat = '<edit>'
-chanell = '<edit>'
-admin_username = '<edit>'
-bot_username = 'bfgcopybot'
+bot_name = 'FGM'
+chat = 't.me/FGMOFF'
+chanell = 't.me/FGMINFO'
+admin_username = '@Geormor'
+bot_username = 'FGM'
 
-chat_log = 0
+chat_log = -1002247244049
 cleaning = 60"""
 
     replacements = [str(value) for value in data]
