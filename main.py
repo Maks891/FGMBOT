@@ -31,6 +31,7 @@ import commands.entertaining.rz
 import commands.basic.top
 import commands.clans.main
 import commands.admin.promo
+import commands.punishment
 
 
 @dp.message_handler(commands=['start'])
