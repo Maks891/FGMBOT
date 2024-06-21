@@ -292,9 +292,6 @@ async def unloading(message):
 
 
 
-    except Exception as e:
-        print(f"Error exporting database: {e}")
-
 
 async def admin_menu(message: types.Message):
     user_id = message.from_user.id
