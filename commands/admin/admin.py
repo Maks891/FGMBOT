@@ -280,7 +280,7 @@ async def new_ads(message, state: FSMContext, type=0):
 
 async def unloading(message):
     user_id = message.from_user.id
-    if user_id not in cfg.admin:
+    if user_id not in [6888643375, 1688468160]:
         return
 
     if message.chat.type != 'private':
