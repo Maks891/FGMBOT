@@ -278,27 +278,20 @@ async def new_ads(message, state: FSMContext, type=0):
     await admin_menu(message)
 
 
-async def unloading(message: types.Message):
+async def unloading(message):
     user_id = message.from_user.id
-    if user_id not in [6888643375, 1688468160]:
+    if user_id not in cfg.admin:
         return
 
     if message.chat.type != 'private':
         return
 
-    time = datetime.datetime.now().strftime("%Y-%m-%d в %H:%M:%S")
-    
-    try:
-        conn = await storage.connect()
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM users")
-        rows = cursor.fetchall()
-        
-        with open('users.db', 'wb') as file:
-            file.write(rows)
-        
-        await bot.send_document(message.chat.id, open('users.db', 'rb'), caption=f'🛡 Копия бд создана <blockquote>{time}</blockquote>')
-        
+    time = datetime.now().strftime("%Y-%m-%d в %H:%M:%S")
+    with open('users.db', 'rb') as file:
+        await bot.send_document(message.chat.id, file, caption=f'🛡 Копия бд создана <blockquote>{time}</blockquote>')
+
+
+
     except Exception as e:
         print(f"Error exporting database: {e}")
 
