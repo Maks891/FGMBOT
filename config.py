@@ -1,6 +1,6 @@
 API_TOKEN = '7092521991:AAG18Ty2cie-czUSvfhQmyWo9sZmIpHtYos'
 
-admin = [6888643375]
+admin = [6888643375, 5244814453]
 start_money = 10000
 
 bot_name = 'BFG'
