@@ -34,7 +34,6 @@ MODULES = [
     'commands.basic.transfer',
     'commands.basic.rpmod',
     'commands.main',
-    'commands.frog',
     'commands.admin.module_manager',
 ]
 
