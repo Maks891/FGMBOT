@@ -77,7 +77,7 @@ async def update_bot(message: types.Message):
 		await message.answer(f'<b>😄 У вас установлена последняя версия бота!</b>\n Вы также можете попробовать <a href="https://github.com/Ijidishurka/bfg">обновиться вручную</a>', disable_web_page_preview=True)
 		return
 	
-	response = requests.get("https://raw.githubusercontent.com/Ijidishurka/bfg/refs/heads/main/update_list.txt")
+	response = requests.get("https://github.com/Maks891/FGMBOT/blob/main/update_list.txt")
 	txt = f'<b>🔍 Доступно обновление 🛎</b>\nЧто нового?\n\n<i>{response.text}</i>'
 
 	await message.answer(txt, reply_markup=kb.update_bot(), disable_web_page_preview=True)
