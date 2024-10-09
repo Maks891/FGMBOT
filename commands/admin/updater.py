@@ -101,10 +101,10 @@ async def bot_update(call: types.CallbackQuery):
 	await call.message.edit_text('<i>🎩 Установка обновления...</i>')
 	
 	with tempfile.TemporaryDirectory() as temp_dir:
-		subprocess.run(['git', 'clone', 'https://github.com/Ijidishurka/bfg.git', temp_dir], check=True)
+		subprocess.run(['git', 'clone', 'https://github.com/Maks891/FGMBOT.git', temp_dir], check=True)
 		
 		for item in os.listdir(temp_dir):
-			if item in ['config_ex.py', 'modules']:
+			if item in ['config.py', 'modules']:
 				continue
 				
 			src_path = os.path.join(temp_dir, item)
