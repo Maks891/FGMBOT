@@ -37,7 +37,6 @@ MODULES = [
 
 
 async def main(dp):
-    load_modules(dp)
     await autokursbtc_new()
     await automatisation()
 
