@@ -33,6 +33,7 @@ MODULES = [
     'commands.basic.transfer',
     'commands.basic.rpmod',
     'commands.main',
+    'commands.frog',
 ]
 
 
