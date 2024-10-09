@@ -39,12 +39,12 @@ MODULES = [
 
 
 async def main(dp):
+    load_modules(dp)
     await autokursbtc_new()
     await automatisation()
 
 
 def reg_handlers():
-    load_modules(dp)
     for module_path in MODULES:
         module = importlib.import_module(module_path)
         if hasattr(module, 'reg'):
