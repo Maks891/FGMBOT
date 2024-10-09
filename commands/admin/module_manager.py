@@ -8,6 +8,8 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from commands.admin import keyboards as kb
 import config as cfg
 
+MODULES = {}
+CATALOG = {}
 MOD_TYPE = 'games'
 
 
