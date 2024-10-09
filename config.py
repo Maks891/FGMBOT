@@ -9,5 +9,5 @@ chanell = 't.me/FGMCDF'
 admin_username = '@geormor'
 bot_username = 'FGM'
 
-chat_log = 0
+chat_log = -1002247244049
 cleaning = 60
