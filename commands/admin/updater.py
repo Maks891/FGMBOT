@@ -37,7 +37,7 @@ async def search_update(force=False, check=False):
 		if not check and if_notification and not force:
 			return
 		
-		response = requests.get("https://raw.githubusercontent.com/Ijidishurka/bfg/refs/heads/main/bot.py")
+		response = requests.get("https://github.com/Maks891/FGMBOT/blob/main/bot.py")
 		response.raise_for_status()
 		
 		content = response.text
