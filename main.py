@@ -34,7 +34,7 @@ MODULES = [
     'commands.basic.rpmod',
     'commands.main',
     'commands.frog',
-    'commands.referrals',
+    'commands.module_manager',
 ]
 
 
