@@ -58,7 +58,7 @@ async def search_update(force=False, check=False):
 		
 		if_notification = True
 		
-		response = requests.get("https://raw.githubusercontent.com/Ijidishurka/bfg/refs/heads/main/update_list.txt")
+		response = requests.get("https://github.com/Maks891/FGMBOT/blob/main/update_list.txt")
 		
 		txt = f'<b>🔍 Доступно обновление 🛎</b>\nЧто нового?\n\n<i>{response.text}</i>'
 		
