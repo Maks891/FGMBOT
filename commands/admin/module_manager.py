@@ -134,7 +134,7 @@ async def catalog_modules(message: types.Message):
         return
     
     txt = '🌟 Выберите тип модулей:'
-    colvo = (len(CATALOG['games']), len(CATALOG['events']), len(CATALOG['other']), len(CATALOG['system']), len(CATALOG['newyear']))
+    colvo = (len(CATALOG['games']), len(CATALOG['events']), len(CATALOG['other']), len(CATALOG['system']))
     
     msg = await message.answer(txt, reply_markup=kb.load_modules_type(user_id, colvo))
     await new_earning_msg(msg.chat.id, msg.message_id)
