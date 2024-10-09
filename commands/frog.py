@@ -122,7 +122,7 @@ class Game:
 
 
 @antispam
-async def start(message: types.Message):
+async def starts(message: types.Message):
 	user_id = message.from_user.id
 	name = await url_name(user_id)
 	balance = await get_balance(user_id)
@@ -221,7 +221,7 @@ loop.create_task(check_game())
 
 
 def register_handlers(dp: Dispatcher):
-	dp.register_message_handler(start, lambda message: message.text.lower().startswith('квак'))
+	dp.register_message_handler(starts, lambda message: message.text.lower().startswith('квак'))
 	dp.register_callback_query_handler(game_kb, text_startswith='kwak_')
 	dp.register_callback_query_handler(game_stop, text_startswith='kwak-stop')
 
