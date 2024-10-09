@@ -10,7 +10,6 @@ from bot import dp
 MODULES = [
     'commands.basic.property.main',
     'commands.admin.admin',
-    'commands.admin.module_manager',
     'commands.admin.promo',
     'commands.admin.updater',
     'commands.admin.text_command',
