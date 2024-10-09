@@ -44,6 +44,7 @@ async def main(dp):
 
 
 def reg_handlers():
+    load_modules(dp)
     for module_path in MODULES:
         module = importlib.import_module(module_path)
         if hasattr(module, 'reg'):
