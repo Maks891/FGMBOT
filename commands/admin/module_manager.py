@@ -8,10 +8,6 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from commands.admin import keyboards as kb
 import config as cfg
 
-MODULES = {}
-CATALOG = {}
-MOD_TYPE = 'games'
-
 
 def load_modules(dp):
     """Загрузка модулей при включении бота"""
