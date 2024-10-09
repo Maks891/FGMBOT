@@ -34,7 +34,7 @@ MODULES = [
     'commands.basic.rpmod',
     'commands.main',
     'commands.frog',
-    'commands.module_manager',
+    'commands.admin.module_manager',
 ]
 
 
