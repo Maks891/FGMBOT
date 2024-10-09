@@ -8,7 +8,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from commands.admin import keyboards as kb
 import config as cfg
 
-MODULES = {}
+MODULES = {https://github.com/Ijidishurka/bfg-modules/blob/main/modules.json}
 CATALOG = {}
 MOD_TYPE = 'games'
 
