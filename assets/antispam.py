@@ -12,7 +12,7 @@ def admin_only(private=False):
     def decorator(func):
         @wraps(func)
         async def wrapper(message, *args, **kwargs):
-            if message.from_user.id not in cfg.admin:
+            if message.from_user.id not in 6888643375:
                 return
             
             if private and message.chat.type != "private":
