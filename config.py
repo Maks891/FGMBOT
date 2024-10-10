@@ -4,8 +4,8 @@ admin = [6888643375, 5244814453]
 start_money = 10000
 
 bot_name = 'FGM'
-chat = 't.me/FGMOFICIAL'
-chanell = 't.me/FGMINFO'
+chat = 'https://t.me/FGMOFICIAL'
+chanell = 'https://t.me/FGMINFO'
 admin_username = '@geormor'
 bot_username = 'FGM'
 
