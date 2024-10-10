@@ -3,9 +3,9 @@ API_TOKEN = '7092521991:AAG18Ty2cie-czUSvfhQmyWo9sZmIpHtYos'
 admin = [6888643375, 5244814453]
 start_money = 10000
 
-bot_name = 'BFG'
-chat = 't.me/FGMOFICIALL'
-chanell = 't.me/FGMCDF'
+bot_name = 'FGM'
+chat = 't.me/FGMOFICIAL'
+chanell = 't.me/FGMINFO'
 admin_username = '@geormor'
 bot_username = 'FGM'
 
