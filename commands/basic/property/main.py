@@ -577,7 +577,6 @@ async def sell_plane(message: types.Message):
 def reg(dp: Dispatcher):
     dp.register_message_handler(helicopters_list, lambda message: message.text.lower().startswith(('вертолеты', 'вертолёты')))
     dp.register_message_handler(cars_list, lambda message: message.text.lower().startswith('машины'))
-    dp.register_message_handler(taxi, lambda message: message.text.lower().startswith('такси'))
     dp.register_message_handler(yahta_list, lambda message: message.text.lower().startswith('дома'))
     dp.register_message_handler(phone_list, lambda message: message.text.lower().startswith('телефоны'))
     dp.register_message_handler(plane_list, lambda message: message.text.lower().startswith(('самолеты', 'самолёты')))
