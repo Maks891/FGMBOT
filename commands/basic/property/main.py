@@ -570,7 +570,7 @@ async def sell_plane(message: types.Message):
     await message.answer(f'{name}, вы успешно продали самолёт за {summ2}$ 🎉')
     await db.sell_property(user_id, 'plane', summ)
 
-async def taxi(message: types.Messsage):
+async def taxi(message: types.Message):
     user_id = message.from_user.id
     name = await url_name(user_id)
     rwin, rloser = await win_luser()
@@ -586,6 +586,7 @@ async def taxi(message: types.Messsage):
 def reg(dp: Dispatcher):
     dp.register_message_handler(helicopters_list, lambda message: message.text.lower().startswith(('вертолеты', 'вертолёты')))
     dp.register_message_handler(cars_list, lambda message: message.text.lower().startswith('машины'))
+    dp.register_message_handler(taxi, lambda message: message.text.lower().startswith('такси'))
     dp.register_message_handler(yahta_list, lambda message: message.text.lower().startswith('дома'))
     dp.register_message_handler(phone_list, lambda message: message.text.lower().startswith('телефоны'))
     dp.register_message_handler(plane_list, lambda message: message.text.lower().startswith(('самолеты', 'самолёты')))
