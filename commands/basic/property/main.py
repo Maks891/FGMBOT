@@ -5,6 +5,7 @@ from commands.main import win_luser
 from bot import bot
 from assets.antispam import antispam
 from commands.basic.property.lists import *
+import random
 
 
 @antispam
@@ -580,8 +581,12 @@ async def taxi(message: types.Message):
         await message.answer(f'{name}, вы не можете таксовать, у вас нет автомобиля')
     
     if data[2] > 0:
-        await message.answer(f'{name}, вы успешно отвезли человека и получили по ебалу')
+        tr = random.randit(0,1)
 
+        if == 0:
+            await message.answer(f'{name}, вы успешно отвезли человека и получили по ебалу')
+        else == 1: 
+            await message.answer(f'отавдладв')
 
 def reg(dp: Dispatcher):
     dp.register_message_handler(helicopters_list, lambda message: message.text.lower().startswith(('вертолеты', 'вертолёты')))
