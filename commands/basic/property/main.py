@@ -580,11 +580,11 @@ async def taxi(message: types.Message):
 
     if data[2] == 0:
         await message.answer(f'{name}, вы не можете таксовать, у вас нет автомобиля')
-        return  # Добавляем return, чтобы выйти из функции, если нет автомобиля
+        return  # Выход из функции, если нет автомобиля
 
     if data[2] > 0:
         try:
-            tr = random.randint(0, 1)  # Используем правильный метод
+            tr = random.randint(0, 1)  # Исправлено: правильный метод randint
 
             if tr == 0:  # Исправлено условие
                 await message.answer(f'{name}, вы успешно отвезли человека и получили по ебалу')
