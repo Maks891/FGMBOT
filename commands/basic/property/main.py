@@ -583,9 +583,9 @@ async def taxi(message: types.Message):
     if data[2] > 0:
         tr = random.randit(0,1)
 
-        if == 0:
+        if = 0:
             await message.answer(f'{name}, вы успешно отвезли человека и получили по ебалу')
-        else == 1: 
+        else = 1: 
             await message.answer(f'отавдладв')
 
 def reg(dp: Dispatcher):
