@@ -571,6 +571,7 @@ async def sell_plane(message: types.Message):
     await message.answer(f'{name}, вы успешно продали самолёт за {summ2}$ 🎉')
     await db.sell_property(user_id, 'plane', summ)
 
+@antispam
 async def taxi(message: types.Message):
     user_id = message.from_user.id
     name = await url_name(user_id)
