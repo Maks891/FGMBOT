@@ -579,7 +579,7 @@ async def taxi(message: types.Message):
     if data[2] == 0:
         await message.answer(f'{name}, вы не можете таксовать, у вас нет автомобиля')
     
-    if data[2] < 0:
+    else data[2] < 0:
         await message.answer(f'{name}, вы успешно отвезли человека и получили по ебалу')
 
 
