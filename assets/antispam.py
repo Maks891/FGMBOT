@@ -88,9 +88,6 @@ async def ban_chek(uid):
         if datetime.now().timestamp() < btime[1]:
             return True
 
-async def new_earning_msg(chat_id: int, message_id: int) -> None:
-    earning_msg[chat_id, message_id] = (0, time.time()-2)
-    
-    
-async def new_earning(msg: types.Message) -> None:
-    earning_msg[msg.chat.id, msg.message_id] = (0, time.time()-2)
+async def new_earning_msg(chat, id):
+    dt = int(datetime.now().timestamp())
+    earning_msg[chat, id] = (0, dt-2)
