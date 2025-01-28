@@ -571,25 +571,6 @@ async def sell_plane(message: types.Message):
     await message.answer(f'{name}, вы успешно продали самолёт за {summ2}$ 🎉')
     await db.sell_property(user_id, 'plane', summ)
 
-@antispam
-async def taxi(message: types.Message):
-    user_id = message.from_user.id
-    name = await url_name(user_id)
-    rwin, rloser = await win_luser()
-    data = await db.get_property(user_id)
-
-    if data[2] == 0:
-        await message.answer(f'{name}, вы не можете таксовать, у вас нет автомобиля')
-        return  # Выход из функции, если нет автомобиля
-
-    if data[2] > 0:
-        try:
-            tr = random.randint(0, 1)  # Исправлено: правильный метод randint
-
-            if tr == 0:  # Исправлено условие
-                await message.answer(f'{name}, вы успешно отвезли человека и получили по ебалу')
-            else:  # Исправлено условие
-                await message.answer(f'{name}, что-то пошло не так, попробуйте еще раз.')
 
 
 
