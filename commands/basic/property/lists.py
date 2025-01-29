@@ -77,6 +77,7 @@ house = {
     14: ('Дом на марсе', 'https://te.legra.ph/file/96917531220a254a570b5.jpg', 15000000000000),
     15: ('Остров на марсе', 'https://te.legra.ph/file/9b66197b25d086f38b51e.jpg', 25000000000000),
     16: ('Свой марс', 'https://te.legra.ph/file/6e65b39089936c35aa759.jpg', 50000000000000),
+    137: ('Кладбище', 'https://i.pinimg.com/736x/89/0b/06/890b06fdb18ac70b61ab704a16d18154.jpg', 1),
 }
 
 
